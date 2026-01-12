@@ -37,6 +37,7 @@ import frc.robot.Constants.VisionConstants;
 // import frc.robot.Constants.OperatorConstants;
 // import frc.robot.Constants.VisionConstants;
 import frc.robot.Robot;
+import frc.robot.RobotContainer;
 //import frc.robot.RobotContainer;
 import frc.robot.subsystems.vision.LimelightHelpers;
 import swervelib.SwerveController;
@@ -221,7 +222,7 @@ public class SwerveSubsystem extends SubsystemBase {
      */
     public Command driveCommand(DoubleSupplier translationX, DoubleSupplier translationY,
             DoubleSupplier headingX, DoubleSupplier headingY) {
-        // swerveDrive.setHeadingCorrection(true); // Normally you would want heading
+        swerveDrive.setHeadingCorrection(true); // Normally you would want heading
         // correction for this kind of control.
         return run(() -> {
 

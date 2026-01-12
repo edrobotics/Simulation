@@ -31,8 +31,8 @@ public class ArcadeDriveCommand extends Command {
   @Override
   public void execute() {
 
-    double turnSpeed = -m_driverController.getLeftX();
-    double driveSpeed = -m_driverController.getLeftY();
+    double turnSpeed = m_driverController.getLeftY() - m_driverController.getRightY();
+    double driveSpeed = -m_driverController.getLeftY() - m_driverController.getRightY();
  
     m_driveSubsystem.drive(driveSpeed, turnSpeed);
   }
