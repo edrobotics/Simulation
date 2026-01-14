@@ -5,8 +5,8 @@ import edu.wpi.first.math.geometry.Pose2d;
 // import edu.wpi.first.math.geometry.Pose3d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.LimelightConstants;
+import frc.robot.RobotContainer;
 // import frc.robot.Constants.VisionConstants;
-// import frc.robot.RobotContainer;
 // import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
 import swervelib.SwerveDrive;
@@ -44,10 +44,10 @@ public class LimelightSubsystem extends SubsystemBase {
     public boolean shouldAcceptUpdate(LimelightHelpers.PoseEstimate limelightMeasurement) {
         double rotationSpeed = Math
                 .abs(m_swerveDrive.getRobotVelocity().omegaRadiansPerSecond);
-        // double xSpeed = Math
-        //         .abs(RobotContainer.m_swerveSubsystem.getSwerveDrive().getRobotVelocity().vxMetersPerSecond);
-        // double ySpeed = Math
-        //         .abs(RobotContainer.m_swerveSubsystem.getSwerveDrive().getRobotVelocity().vyMetersPerSecond);
+        double xSpeed = Math
+                 .abs(RobotContainer.m_swerveSubsystem.getSwerveDrive().getRobotVelocity().vxMetersPerSecond);
+         double ySpeed = Math
+                 .abs(RobotContainer.m_swerveSubsystem.getSwerveDrive().getRobotVelocity().vyMetersPerSecond);
 
         double estimatedDistance = limelightMeasurement.avgTagDist;
 

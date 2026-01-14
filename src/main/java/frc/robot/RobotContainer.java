@@ -42,7 +42,7 @@ public class RobotContainer {
 
         
   public final DriveSubsystem m_driveSubsystem = new DriveSubsystem();
-  public final SwerveSubsystem m_swerveSubsystem = new SwerveSubsystem(
+  public final static SwerveSubsystem m_swerveSubsystem = new SwerveSubsystem(
                           m_driverController,
                         new File(Filesystem.getDeployDirectory(), "swerve"));  
   
